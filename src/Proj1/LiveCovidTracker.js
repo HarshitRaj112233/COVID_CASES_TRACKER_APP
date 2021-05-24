@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import "../Proj1/LiveCovidTracker.css";
 import { Footer } from "./Footer";
 import { Loading } from "./Loading";
@@ -12,24 +12,25 @@ const Project1 = () => {
   let number = 0;
   var noname = false;
   // const [allstate, setallstate] = useState([]);
-  const getcasesnumber = async () => {
+  const getcasesnumber = useCallback(async () => {
     setloading(false);
     console.log("insidegetcases");
     const Api = await fetch("https://api.covid19india.org/data.json");
     const getdata = await Api.json();
     setcases(getdata.statewise);
-    console.log("CASES", cases);
-  };
+    // console.log("CASES", cases);
+  }, [])
   // ---------------
   cases.map((element) => {
     return allstate.push(element.state);
   });
+  // ______________
   useEffect(() => {
     setTimeout(() => {
-      console.log("inside useefect", cases);
+      // console.log("inside useefect", cases);
       getcasesnumber();
     }, 1800);
-  }, []);
+  }, [getcasesnumber]);
 
   // ----------------
   // --------------

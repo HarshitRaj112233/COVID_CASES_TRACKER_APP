@@ -14,7 +14,7 @@ body {
 .live::before {
   content: "";
   position: absolute;
-  margin-top: 6px;
+  margin-top: 3px;
   /* left: 200px; */
   transform: translateX(-25px);
   height: 20px;
@@ -26,7 +26,7 @@ body {
 }
 @keyframes blink {
   0% {
-    margin-top: 7px;
+    margin-top: 3px;
     height: 18px;
     width: 18px;
     box-shadow: 0 0 4px red, 0 0 14px red, 0 0 24px red;
@@ -39,7 +39,7 @@ body {
   100% {
     box-shadow: 0 0 4px red, 0 0 14px red, 0 0 24px red;
 
-    margin-top: 7px;
+    margin-top: 3px;
     height: 18px;
     width: 18px;
   }
@@ -62,7 +62,9 @@ body {
   border: none;
   margin-left: 6px;
   border-radius: 12px;
-  color: white;
+  color: #000;
+  background-color: greenyellow;
+  cursor: pointer;
   font-weight: 600;
 }
 .submit:hover {
